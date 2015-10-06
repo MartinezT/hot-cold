@@ -18,7 +18,15 @@ $('form').submit(function(e){
     }
      getGuess(); 
 })
-   
+ $('.what').click(function(){
+            $('.overlay').fadeIn(1000);
+
+        });
+
+        /*--- Hide information modal box ---*/
+        $('a.close').click(function(){
+            $('.overlay').fadeOut(1000);
+        });  
 
     function game() {
         var guess = parseInt($('#userGuess').val());
@@ -65,15 +73,7 @@ $('form').submit(function(e){
                 }
             }
         }
-        $('.what').click(function(){
-            $('.overlay').fadeIn(1000);
-
-        });
-
-        /*--- Hide information modal box ---*/
-        $('a.close').click(function(){
-            $('.overlay').fadeOut(1000);
-        });
+        
         $('.new').click(function(event){
             event.preventDefault();
             newGame();
